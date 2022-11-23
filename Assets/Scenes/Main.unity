@@ -231,7 +231,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 340869455}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: b9c664160cb7a724d9777a6ad6222a28, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -313,9 +313,9 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 0
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 2
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 3
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -539,23 +539,11 @@ PrefabInstance:
     - target: {fileID: 747806495401477012, guid: c813208e672e3074bbe118e1a9ee94fd, type: 3}
       propertyPath: PlanePrefab
       value: 
-      objectReference: {fileID: 4364433889837607255, guid: a879d41cb283e4b0d85af2cf6377908a, type: 3}
+      objectReference: {fileID: 102490448831091297, guid: 19eaa1918d9a5014889edb43d3e32f55, type: 3}
     - target: {fileID: 747806495401477012, guid: c813208e672e3074bbe118e1a9ee94fd, type: 3}
-      propertyPath: PrefabOverrides.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 747806495401477012, guid: c813208e672e3074bbe118e1a9ee94fd, type: 3}
-      propertyPath: PrefabOverrides.Array.data[0].Prefab
+      propertyPath: VolumePrefab
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 747806495401477012, guid: c813208e672e3074bbe118e1a9ee94fd, type: 3}
-      propertyPath: PrefabOverrides.Array.data[0].ClassificationLabel
-      value: WALL_FACE
-      objectReference: {fileID: 0}
-    - target: {fileID: 747806495401477012, guid: c813208e672e3074bbe118e1a9ee94fd, type: 3}
-      propertyPath: PrefabOverrides.Array.data[0]._editorClassificationIndex
-      value: 2
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8013016026686888416, guid: d9e6bf90859da5e4a99697b186a19545, type: 3}
     - target: {fileID: 747806495401477014, guid: c813208e672e3074bbe118e1a9ee94fd, type: 3}
       propertyPath: m_Name
       value: OVRSceneManager
