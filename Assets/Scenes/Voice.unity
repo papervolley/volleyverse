@@ -639,6 +639,14 @@ MonoBehaviour:
   intent: change_color
   confidenceThreshold: 0.6
   valueMatchers:
+  - path: entities.color:color[0].value
+    witValueReference: {fileID: 0}
+    contentRequired: 1
+    matchMethod: 0
+    comparisonMethod: 0
+    matchValue: 
+    floatingPointComparisonTolerance: 0.00009999999747378752
+    confidenceRanges: []
   - path: entities.shape:shape[0].value
     witValueReference: {fileID: 0}
     contentRequired: 1
