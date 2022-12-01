@@ -30,8 +30,122 @@ MonoBehaviour:
     speech: 
     message: 
     dictation: 
-  entities: []
-  intents: []
+  entities:
+  - witConfiguration: {fileID: 11400000}
+    id: 510271251030642
+    name: color
+    lookups:
+    - free-text
+    - keywords
+    roles:
+    - id: 843430960214670
+      name: color
+    keywords:
+    - keyword: blue
+      synonyms:
+      - blue
+    - keyword: gray
+      synonyms:
+      - gray
+    - keyword: green
+      synonyms:
+      - green
+    - keyword: purple
+      synonyms:
+      - purple
+    - keyword: red
+      synonyms:
+      - red
+  - witConfiguration: {fileID: 11400000}
+    id: 938850687092413
+    name: greeting
+    lookups:
+    - keywords
+    roles:
+    - id: 722039926187830
+      name: greeting
+    keywords:
+    - keyword: volley
+      synonyms:
+      - bolley
+      - volley
+  - witConfiguration: {fileID: 11400000}
+    id: 2699675863497398
+    name: shape
+    lookups:
+    - keywords
+    roles:
+    - id: 810053610298567
+      name: shape
+    keywords:
+    - keyword: capsule
+      synonyms:
+      - capsule
+      - pill
+    - keyword: cube
+      synonyms:
+      - box
+      - cube
+    - keyword: cylinder
+      synonyms:
+      - cylinder
+      - tube
+    - keyword: sphere
+      synonyms:
+      - ball
+      - circle
+      - sofia
+      - sphere
+    - keyword: torus
+      synonyms:
+      - donut
+      - torus
+    - keyword: triangle
+      synonyms:
+      - pyramid
+      - triangle
+  - witConfiguration: {fileID: 11400000}
+    id: 5935642743166341
+    name: wish
+    lookups:
+    - free-text
+    roles:
+    - id: 871152993926039
+      name: wish
+    keywords: []
+  intents:
+  - witConfiguration: {fileID: 11400000}
+    id: 537631648240639
+    name: change_color
+    entities:
+    - witConfiguration: {fileID: 11400000}
+      id: 843430960214670
+      name: color:color
+      lookups: []
+      roles: []
+      keywords: []
+    - witConfiguration: {fileID: 11400000}
+      id: 810053610298567
+      name: shape:shape
+      lookups: []
+      roles: []
+      keywords: []
+  - witConfiguration: {fileID: 11400000}
+    id: 1889573038048247
+    name: gifting
+    entities:
+    - witConfiguration: {fileID: 11400000}
+      id: 722039926187830
+      name: greeting:greeting
+      lookups: []
+      roles: []
+      keywords: []
+    - witConfiguration: {fileID: 11400000}
+      id: 871152993926039
+      name: wish:wish
+      lookups: []
+      roles: []
+      keywords: []
   traits: []
   isDemoOnly: 0
   useConduit: 0
