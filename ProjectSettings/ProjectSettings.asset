@@ -780,11 +780,11 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 0
-  cloudProjectId: 
+  cloudProjectId: bab3aad3-edab-4401-8237-799bbc1f2156
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
-  organizationId: 
+  projectName: Candies
+  organizationId: paperworkstudio
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 
