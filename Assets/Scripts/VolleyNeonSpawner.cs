@@ -27,6 +27,7 @@ public class VolleyNeonSpawner : MonoBehaviour
             // attach Volley Neon
             VolleyNeonRef = Instantiate(VolleyNeonPrefab, _sceneAnchor.transform);
             VolleyNeonRef.transform.localScale = Vector3.one;
+            VolleyNeonRef.transform.position += new Vector3(0.0f, 0.3f, 0.0f);
         }
     }
 }
