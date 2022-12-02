@@ -25,6 +25,8 @@ public class RayManager : MonoBehaviour
     [SerializeField]
     private ParticleSystem bagParticles = null;
 
+    [SerializeField] private Animator bagAnimator;
+
     [SerializeField] private LayerMask layermask;
 
     private void FixedUpdate() {
@@ -41,10 +43,12 @@ public class RayManager : MonoBehaviour
             {
                 micIntention = MicIntention.Activate;
                 VoiceExperience.Activate();
+                bagAnimator.SetBool("Gazing", true);
             }
         } else {
             Debugger.text = "not hitting anything";
             micIntention = MicIntention.Deactivate;
+            bagAnimator.SetBool("Gazing", false);
         }
     }
 
