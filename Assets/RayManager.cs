@@ -23,7 +23,7 @@ public class RayManager : MonoBehaviour
     private Oculus.Voice.AppVoiceExperience VoiceExperience = null;
 
     [SerializeField]
-    private Renderer bag = null;
+    private ParticleSystem bagParticles = null;
 
     [SerializeField] private LayerMask layermask;
 
@@ -44,17 +44,18 @@ public class RayManager : MonoBehaviour
             }
         } else {
             Debugger.text = "not hitting anything";
+            micIntention = MicIntention.Deactivate;
         }
     }
 
     public void OnVoiceActivate()
     {
-        bag.material.color = Color.yellow;
+        bagParticles.Play();
     }
 
     public void OnVoiceDeactive()
     {
-        micIntention = MicIntention.Deactivate;
-        bag.material.color = Color.white;
+        //micIntention = MicIntention.Deactivate;
+        bagParticles.Stop();
     }
 }
