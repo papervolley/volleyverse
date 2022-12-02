@@ -25,6 +25,8 @@ public class RayManager : MonoBehaviour
     [SerializeField]
     private ParticleSystem bagParticles = null;
 
+    public ParticleSystem glowParticles;
+
     [SerializeField] private Animator bagAnimator;
 
     [SerializeField] private LayerMask layermask;
@@ -55,11 +57,13 @@ public class RayManager : MonoBehaviour
     public void OnVoiceActivate()
     {
         bagParticles.Play();
+        glowParticles.Play();
     }
 
     public void OnVoiceDeactive()
     {
         //micIntention = MicIntention.Deactivate;
         bagParticles.Stop();
+        glowParticles.Stop();
     }
 }

@@ -14,7 +14,8 @@ public class WishForGift : MonoBehaviour
     public GameObject cybertruck;
     public GameObject alexa;
     public TextMeshPro giftContentText;
-    //public Animator bagAnimator;
+    public ParticleSystem energyParticles;
+    public Animator bagAnimator;
  
 
     public void GenerateNewGift(string[] values)
@@ -25,10 +26,8 @@ public class WishForGift : MonoBehaviour
         
 
         if(wishedItem == "watch"){
-        
         Instantiate(watch, giftSpawnSpot.transform.position, giftSpawnSpot.transform.rotation);
         // giftObject.GetComponent<Rigidbody>().AddForce(transform.up * 200);
-        
         }
         else if(wishedItem == "iphone"){
         Instantiate(iPhone, giftSpawnSpot.transform.position, giftSpawnSpot.transform.rotation);
@@ -48,11 +47,12 @@ public class WishForGift : MonoBehaviour
         // giftObject.GetComponent<Rigidbody>().AddForce(transform.up * 200);
         }
 
-        // if(wishedItem == "watch" || wishedItem == "iphone" || wishedItem == "laptop")
-        // {
-        //   bagAnimator.SetBool("shallPop", true);
-        // }
+        if(wishedItem == "watch" || wishedItem == "iphone" || wishedItem == "laptop" || wishedItem == "wine" || wishedItem == "cybertruck" || wishedItem == "alexa")
+        {
+          bagAnimator.SetBool("shallPop", true);
+          energyParticles.Play();
+        }
 
-     }
+     
     }
-
+}

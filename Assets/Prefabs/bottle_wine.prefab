@@ -750,6 +750,7 @@ GameObject:
   - component: {fileID: 7802711975239539219}
   - component: {fileID: 460603517428022995}
   - component: {fileID: 2477193532675131698}
+  - component: {fileID: 2127834229989832518}
   m_Layer: 0
   m_Name: bottle_wine
   m_TagString: Untagged
@@ -765,7 +766,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8344705468976513143}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 934.81, z: 0.2984}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 0.00019846678, y: 0.00019846678, z: 0.00019846678}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -862,6 +863,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2127834229989832518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8344705468976513143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 234ecb0cdc5764b6cba661b15938fe0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8773113240099628411
 GameObject:
   m_ObjectHideFlags: 0
