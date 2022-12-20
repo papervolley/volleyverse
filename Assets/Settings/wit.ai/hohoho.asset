@@ -67,7 +67,9 @@ MonoBehaviour:
     keywords:
     - keyword: volley
       synonyms:
+      - body
       - bolley
+      - monitor
       - volley
   - witConfiguration: {fileID: 11400000}
     id: 2699675863497398
@@ -109,10 +111,55 @@ MonoBehaviour:
     name: wish
     lookups:
     - free-text
+    - keywords
     roles:
     - id: 871152993926039
       name: wish
-    keywords: []
+    keywords:
+    - keyword: alexa
+      synonyms:
+      - alexa
+      - dot
+      - echo
+      - echo dot
+    - keyword: apple
+      synonyms:
+      - apple
+    - keyword: cybertruck
+      synonyms:
+      - car
+      - cybertruck
+      - tesla
+      - truck
+      - vehicle
+    - keyword: iphone
+      synonyms:
+      - cellphone
+      - iphone
+      - phone
+      - telephone
+    - keyword: laptop
+      synonyms:
+      - computer
+      - laptop
+      - mac
+      - pc
+    - keyword: pencil
+      synonyms:
+      - pen
+      - pencil
+    - keyword: watch
+      synonyms:
+      - apple watch
+      - watch
+      - witch
+    - keyword: wine
+      synonyms:
+      - alcohol
+      - bottle
+      - drink
+      - wine
+      - wine bottle
   intents:
   - witConfiguration: {fileID: 11400000}
     id: 537631648240639
