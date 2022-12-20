@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using CandyCoded.env;
 
 public class SketchfabManager : MonoBehaviour
 {
@@ -38,7 +39,8 @@ public class SketchfabManager : MonoBehaviour
         {
             if(answer.Success)
             {
-                AccessToken = answer.Object.AccessToken;
+                // Skip saving AccessToken for now
+                //AccessToken = answer.Object.AccessToken;
                 SketchfabAPI.AuthorizeWithAccessToken(answer.Object);
             }
             else
@@ -52,7 +54,7 @@ public class SketchfabManager : MonoBehaviour
     void DownloadModel(string modelUID, bool enableCache = true)
     {
         // This first call will get the model information
-        SketchfabAPI.GetModel(_uid, (resp) =>
+        SketchfabAPI.GetModel(modelUID, (resp) =>
         {
             // This second call will get the model information, download it and instantiate it
             SketchfabModelImporter.Import(resp.Object, (obj) =>
@@ -63,6 +65,19 @@ public class SketchfabManager : MonoBehaviour
                 }
             }, enableCache);
         }, enableCache);
+    }
+
+    void SearchAndDownloadModel(string keyword)
+    {
+        UnityWebRequestSketchfabModelList.Parameters p = new UnityWebRequestSketchfabModelList.Parameters();
+        p.downloadable = true;
+        SketchfabAPI.ModelSearch(((SketchfabResponse<SketchfabModelList> _answer) =>
+        {
+            SketchfabResponse<SketchfabModelList> ans = _answer;
+            var m_ModelList = ans.Object.Models;
+            // TODO: Get the first match and display
+
+        }), p, keyword);
     }
 
     void Logout()
