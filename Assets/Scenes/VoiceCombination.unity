@@ -932,9 +932,9 @@ MonoBehaviour:
   onMultiValueEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1869039861}
-        m_TargetAssemblyTypeName: WishForGift, Assembly-CSharp
-        m_MethodName: GenerateNewGift
+      - m_Target: {fileID: 1187381446}
+        m_TargetAssemblyTypeName: SketchfabManager, Assembly-CSharp
+        m_MethodName: GenerateGift
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1593,8 +1593,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1187381445}
   - component: {fileID: 1187381444}
+  - component: {fileID: 1187381446}
   m_Layer: 0
-  m_Name: GameSetup
+  m_Name: GameLoop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1629,6 +1630,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1187381446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187381443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bc4834e0afdb4667be99b191ac01e65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GiftContentText: {fileID: 1742877430}
+  TreasureBag: {fileID: 1656066651}
+  Offset: {x: 0, y: 0.5, z: 0}
+  GrabbableObjectPrefab: {fileID: 1739579990054384336, guid: c85012101a24a47e981a0391bbb770c8, type: 3}
 --- !u!1001 &1216145508
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2645,7 +2662,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 1.0588441}
+  m_margin: {x: 0, y: 0, z: 0, w: 3.5740418}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
