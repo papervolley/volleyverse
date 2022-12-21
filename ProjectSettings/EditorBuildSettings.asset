@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/VoiceCombination.unity
     guid: 7f79a10fe90b14d25be770054beea69d
+  - enabled: 0
+    path: Assets/Oculus/Interaction/Samples/Scenes/Examples/TransformerExamples.unity
+    guid: 7475942f60c376744ba1ec487d140105
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: c9789e6b43e4145a7b0ed93ab4e802c1, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 3792462f0a49149269f664e5156da1f6, type: 2}

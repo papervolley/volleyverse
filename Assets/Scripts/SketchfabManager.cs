@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using CandyCoded.env;
 using Oculus.Interaction;
+using Oculus.Interaction.Grab;
 using Oculus.Interaction.HandGrab;
 
 public class SketchfabManager : MonoBehaviour
@@ -15,6 +16,12 @@ public class SketchfabManager : MonoBehaviour
 
     [SerializeField]
     private TextMeshPro GiftContentText;
+    [SerializeField]
+    public float GiftScale = 1.0f;
+    [SerializeField]
+    public float MinScaleFactor = 0.1f;
+    [SerializeField]
+    public float MaxScaleFactor = 3.0f;
     [SerializeField]
     private Transform TreasureBag;
     [SerializeField]
@@ -83,12 +90,36 @@ public class SketchfabManager : MonoBehaviour
                 //Collider[] newGrabPoints = new Collider[1];
                 //newGrabPoints[0] = boxCollider;
                 grab.enabled = true;
+                grab.TransferOnSecondSelection = false;
+                
                 //grab.grabPoints = newGrabPoints;
                 
                 HandGrabInteractable grabInteractable = obj.AddComponent<HandGrabInteractable>();
                 grabInteractable.InjectOptionalPointableElement(grab);
+                //grabInteractable.ResetGrabOnGrabsUpdated = false;
+                grabInteractable.InjectSupportedGrabTypes(GrabTypeFlags.Pinch);
+                
+                OneGrabFreeTransformer oneGrabTransformer = obj.AddComponent<OneGrabFreeTransformer>();
+                grab.InjectOptionalOneGrabTransformer(oneGrabTransformer);
 
-                obj.transform.localScale = Vector3.one * 0.01f;
+                TwoGrabFreeTransformer twoGrabTransformer = obj.AddComponent<TwoGrabFreeTransformer>();
+                
+                // To make two grab scale work, you have to assign the constraints to TwoGrabFreeTransformer
+                TwoGrabFreeTransformer.TwoGrabFreeConstraints twoGrabConstraints = new TwoGrabFreeTransformer.TwoGrabFreeConstraints();
+                twoGrabConstraints.ConstraintsAreRelative = true;
+                FloatConstraint minScaleConstraint = new FloatConstraint();
+                minScaleConstraint.Constrain = true;
+                minScaleConstraint.Value = MinScaleFactor;
+                twoGrabConstraints.MinScale = minScaleConstraint;
+                FloatConstraint maxScaleConstraint = new FloatConstraint();
+                maxScaleConstraint.Constrain = true;
+                maxScaleConstraint.Value = MaxScaleFactor;
+                twoGrabConstraints.MaxScale = maxScaleConstraint;
+                twoGrabTransformer.Constraints = twoGrabConstraints;
+                
+                grab.InjectOptionalTwoGrabTransformer(twoGrabTransformer);
+
+                obj.transform.localScale = Vector3.one * GiftScale;
                 obj.transform.localPosition = TreasureBag.position + Offset;
             }
         }, enableCache);
