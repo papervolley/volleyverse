@@ -16,7 +16,8 @@ public class WishForGift : MonoBehaviour
     public TextMeshPro giftContentText;
     public ParticleSystem energyParticles;
     public Animator bagAnimator;
- 
+
+    
 
     public void GenerateNewGift(string[] values)
     {

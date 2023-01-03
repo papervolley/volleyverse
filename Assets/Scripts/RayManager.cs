@@ -31,6 +31,10 @@ public class RayManager : MonoBehaviour
 
     [SerializeField] private LayerMask layermask;
 
+    private void Start() {
+        //GameEvents.current.OnWillMicActivate += ActivateMic;
+    }
+
     private void FixedUpdate() {
         Vector3 fwd = Eye.transform.TransformDirection(Vector3.forward);
         RaycastHit hit;
@@ -41,29 +45,13 @@ public class RayManager : MonoBehaviour
             Debug.Log("hitting " + hitObj.tag);
             Debugger.text = hitObj.name;
             // activate voice
-            if (micIntention != MicIntention.Activate)
+            if (GameManager.current.State == GameState.Idle)
             {
-                micIntention = MicIntention.Activate;
-                VoiceExperience.Activate();
-                bagAnimator.SetBool("Gazing", true);
+                GameEvents.current.WillMicActivate();
             }
         } else {
             Debugger.text = "not hitting anything";
-            micIntention = MicIntention.Deactivate;
             bagAnimator.SetBool("Gazing", false);
         }
-    }
-
-    public void OnVoiceActivate()
-    {
-        bagParticles.Play();
-        glowParticles.Play();
-    }
-
-    public void OnVoiceDeactive()
-    {
-        //micIntention = MicIntention.Deactivate;
-        bagParticles.Stop();
-        glowParticles.Stop();
     }
 }

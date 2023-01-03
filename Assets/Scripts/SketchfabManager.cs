@@ -26,6 +26,8 @@ public class SketchfabManager : MonoBehaviour
     private Transform TreasureBag;
     [SerializeField]
     private Vector3 Offset;
+    [SerializeField]
+    private GameManager GameManager;
     private void Start()
     {
         Email = GetEnvVar("SKETCHFAB_ACCOUNT");
@@ -45,7 +47,7 @@ public class SketchfabManager : MonoBehaviour
     {
         if (env.TryParseEnvironmentVariable(name, out string value))
         {
-            Debug.Log($"get var: {name}:{value}");
+            //Debug.Log($"get var: {name}:{value}");
             return value;
         } else {
             return null;
